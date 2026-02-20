@@ -7,6 +7,8 @@ import { useScanner } from "./hooks/useScanner";
 import { ScannerHero, ScanResultCard } from "./components/Scanner/ScannerComponents";
 import { RecentScans, FeatureGrid } from "./components/Scanner/MiscComponents";
 import { BatchScanner } from "./components/Scanner/BatchScanner";
+import SecurityGlossary from "./components/Scanner/SecurityGlossary";
+import { LiveThreatFeed } from "./components/Scanner/LiveThreatFeed";
 
 function ScannerContent() {
   const searchParams = useSearchParams();
@@ -101,6 +103,7 @@ function ScannerContent() {
       </div>
 
       <FeatureGrid />
+      <SecurityGlossary />
     </div>
   );
 }
@@ -109,10 +112,14 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       <Navbar />
+      <LiveThreatFeed />
 
-      <div className="absolute top-[-10%] right-[-5%] w-[15vw] h-[60vh] bg-primary opacity-5 capsule-shape -z-10"></div>
-      <div className="absolute top-[20%] right-[12%] w-[12vw] h-[80vh] bg-secondary opacity-10 capsule-shape -z-10"></div>
-      <div className="absolute bottom-[-10%] left-[-5%] w-[18vw] h-[50vh] bg-accent opacity-20 pill -z-10"></div>
+      <div className="absolute top-[-10%] right-[-5%] w-[15vw] h-[60vh] bg-primary opacity-5 capsule-shape -z-10 animate-blob"></div>
+      <div className="absolute top-[20%] right-[12%] w-[12vw] h-[80vh] bg-secondary opacity-10 capsule-shape -z-10 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-[-10%] left-[-5%] w-[18vw] h-[50vh] bg-accent opacity-20 pill -z-10 animate-blob animation-delay-4000"></div>
+
+      {/* Decorative Neural Grid */}
+      <div className="absolute inset-0 -z-20 opacity-[0.03]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, #2D3E33 1px, transparent 0)`, backgroundSize: '40px 40px' }}></div>
 
       <main className="container mx-auto px-6 pt-32 pb-20 flex flex-col items-center justify-center min-h-[80vh]">
         <Suspense fallback={<div className="text-primary font-bold animate-pulse uppercase tracking-widest text-xs">Initializing Neural Engine...</div>}>
