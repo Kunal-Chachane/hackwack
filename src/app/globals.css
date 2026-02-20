@@ -33,3 +33,22 @@ body {
 .pill {
   border-radius: 9999px;
 }
+
+/* Mobile App Feel */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overscroll-behavior-y: none;
+    /* Prevent pull-to-refresh feel */
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.no-select {
+  user-select: none;
+}

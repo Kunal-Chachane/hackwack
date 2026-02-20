@@ -1,0 +1,30 @@
+{
+    "name": "LINK AI URL Scanner",
+    "short_name": "LINK",
+    "description": "Professional AI-powered URL scanning and risk assessment.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FCF9EE",
+    "theme_color": "#2D3E33",
+    "icons": [
+        {
+            "src": "/app-logo.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "/app-logo.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ],
+    "share_target": {
+        "action": "/",
+        "method": "GET",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
+}

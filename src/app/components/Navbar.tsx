@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -10,17 +11,22 @@ export default function Navbar() {
         <nav className="absolute top-0 left-0 w-full z-50 px-6 py-6 md:px-20 md:py-10">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <Link href="/" className="group flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold transition-transform group-hover:scale-110 shadow-lg">
-                        S
+                    <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
+                        <Image
+                            src="/app-logo.jpg"
+                            alt="Hackwack Logo"
+                            fill
+                            className="object-contain rounded-full shadow-lg"
+                        />
                     </div>
-                    <span className="font-black text-xl tracking-tighter text-primary">SCANNER</span>
+                    <span className="font-black text-xl tracking-tighter text-primary">LINK</span>
                 </Link>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-10">
                     <Link href="#" className="font-bold text-primary/70 hover:text-primary transition-colors text-sm uppercase tracking-widest">Pricing</Link>
-                    <Link href="#" className="font-bold text-primary/70 hover:text-primary transition-colors text-sm uppercase tracking-widest">About</Link>
-                    <Link href="#" className="font-bold text-primary/70 hover:text-primary transition-colors text-sm uppercase tracking-widest">Contact</Link>
+                    <Link href="/about" className="font-bold text-primary/70 hover:text-primary transition-colors text-sm uppercase tracking-widest">About</Link>
+                    <Link href="/contact" className="font-bold text-primary/70 hover:text-primary transition-colors text-sm uppercase tracking-widest">Contact</Link>
                     <button className="pill bg-primary border-4 border-white/50 text-white px-8 py-3 font-bold hover:bg-primary/90 transition-all shadow-xl shadow-primary/10">
                         Sign In
                     </button>
@@ -43,8 +49,8 @@ export default function Navbar() {
             {isMenuOpen && (
                 <div className="md:hidden absolute top-24 left-6 right-6 bg-white rounded-3xl p-8 shadow-2xl flex flex-col gap-6 items-center border border-zinc-100 slide-down">
                     <Link href="#" className="font-bold text-primary text-lg" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
-                    <Link href="#" className="font-bold text-primary text-lg" onClick={() => setIsMenuOpen(false)}>About</Link>
-                    <Link href="#" className="font-bold text-primary text-lg" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                    <Link href="/about" className="font-bold text-primary text-lg" onClick={() => setIsMenuOpen(false)}>About</Link>
+                    <Link href="/contact" className="font-bold text-primary text-lg" onClick={() => setIsMenuOpen(false)}>Contact</Link>
                     <button className="pill bg-primary text-white w-full py-4 font-bold shadow-lg">
                         Sign In
                     </button>
