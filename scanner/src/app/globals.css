@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FCF9EE;
+  --foreground: #1A1A1A;
+  --primary: #2D3E33;
+  --secondary: #A4AC86;
+  --accent: #E1EADD;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Coffee Craft Aesthetic */
+.capsule-shape {
+  border-radius: 9999px 9999px 0 0;
+}
+
+.pill {
+  border-radius: 9999px;
+}
